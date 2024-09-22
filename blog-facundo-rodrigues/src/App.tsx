@@ -1,8 +1,8 @@
-import './App.css'
-import Navbar from './components/Navbar'
-
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+
+import './App.css'
+import { CssBaseline } from '@mui/material';
+import Navbar from './components/Navbar.tsx';
 
 const darkTheme = createTheme({
   palette: {
@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
         <Navbar />
-    </ThemeProvider>
+      </ThemeProvider>
     </>
   )
 }

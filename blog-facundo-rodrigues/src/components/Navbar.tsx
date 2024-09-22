@@ -1,18 +1,6 @@
+import { MenuBook } from '@mui/icons-material';
+import { AppBar, Box, Button, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from '@mui/material';
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
 interface Props {
   /**
@@ -25,7 +13,7 @@ interface Props {
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
 
-export default function DrawerAppBar(props: Props) {
+export default function Navbar(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -36,7 +24,7 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Menu
       </Typography>
       <Divider />
       <List>
@@ -65,7 +53,7 @@ export default function DrawerAppBar(props: Props) {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { sm: 'none' } }}
           >
-            <MenuIcon />
+            <MenuBook />
           </IconButton>
           <Typography
             variant="h6"
