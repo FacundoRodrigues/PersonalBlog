@@ -1,7 +1,8 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import './App.css'
 import { CssBaseline } from '@mui/material';
+import './App.css';
+import Blogs from './components/Blogs.tsx';
 import Navbar from './components/Navbar.tsx';
 
 const darkTheme = createTheme({
@@ -17,6 +18,7 @@ function App() {
       <ThemeProvider theme={darkTheme}>
       <CssBaseline />
         <Navbar />
+        <Blogs />
       </ThemeProvider>
     </>
   )
