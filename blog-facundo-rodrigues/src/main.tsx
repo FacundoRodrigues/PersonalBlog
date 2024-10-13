@@ -10,6 +10,7 @@ import App from './App.tsx';
 import Articulos from './components/Articulos.tsx';
 import Frases from './components/Frases.tsx';
 import Newsletter from './components/Newsletter.tsx';
+import NotFound from './components/NotFound.tsx';
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "newsletter",
         element: <Newsletter />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },
