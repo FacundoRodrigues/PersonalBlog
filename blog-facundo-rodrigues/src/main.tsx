@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from './App.tsx';
+import ArticuloDetail from './components/ArticuloDetail.tsx';
 import Articulos from './components/Articulos.tsx';
 import Frases from './components/Frases.tsx';
 import Newsletter from './components/Newsletter.tsx';
@@ -20,7 +21,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Articulos />,
+        element: <Articulos/>,
+      },
+      {
+        path: "articulos/:id",
+        element: <ArticuloDetail />,
       },
       {
         path: "frases",
@@ -37,6 +42,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

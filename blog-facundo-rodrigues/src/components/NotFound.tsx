@@ -18,7 +18,7 @@ const NotFound: React.FC = () => {
         404
       </Typography>
       <Typography variant="h5" component="h2" gutterBottom>
-        ¡Página No Encontrada!
+        ¡Página no encontrada!
       </Typography>
       <Typography variant="body1" gutterBottom>
         Lo sentimos, la página que buscas no existe.
