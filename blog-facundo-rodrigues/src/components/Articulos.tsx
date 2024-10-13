@@ -40,7 +40,7 @@ const mockData: CardData[] = [
   },
 ];
 
-const CardGrid: React.FC = () => {
+const Articulos: React.FC = () => {
   return (
     <Box component="main" sx={{ p: 3 }}>
       <Grid container spacing={2} justifyContent="center" alignItems="stretch" wrap="wrap">
@@ -71,4 +71,4 @@ const CardGrid: React.FC = () => {
   );
 };
 
-export default CardGrid;
+export default Articulos;

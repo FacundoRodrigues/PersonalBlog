@@ -1,17 +1,18 @@
 import { MenuBook } from '@mui/icons-material';
 import { AppBar, Box, Button, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from '@mui/material';
 import * as React from 'react';
+import { Link } from 'react-router-dom'; // Importa Link de react-router-dom
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = [
+  { label: 'Articulos', path: '/' },
+  { label: 'Frases', path: '/frases' },
+  { label: 'Newsletter', path: '/newsletter' },
+];
 
 export default function Navbar(props: Props) {
   const { window } = props;
@@ -29,9 +30,9 @@ export default function Navbar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+          <ListItem key={item.label} disablePadding>
+            <ListItemButton component={Link} to={item.path} sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -57,15 +58,16 @@ export default function Navbar(props: Props) {
           </IconButton>
           <Typography
             variant="h6"
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
+            component={Link}
+            to="/"
+            sx={{ display: { xs: 'none', sm: 'block', color: 'inherit', textDecoration: 'none' } }}
           >
             𝘍𝘢𝘤𝘶𝘯𝘥𝘰 𝘙𝘰𝘥𝘳𝘪𝘨𝘶𝘦𝘴
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item.label} component={Link} to={item.path} sx={{ color: '#fff' }}>
+                {item.label}
               </Button>
             ))}
           </Box>
